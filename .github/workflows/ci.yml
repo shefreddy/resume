@@ -38,6 +38,6 @@ jobs:
          username: ${{vars.USERNAME}}
          key: ${{secrets.SSHKEY}}
          script: |
-            docker stop resume2 || echo ""
-            docker rm resume2 || echo ""
-            docker run -d --name resume3 -p 8080:5001 ${{secrets.REGISTRY_USERNAME}}/my-image-name:${{github.run_number}}
+            docker stop resume3 || echo ""
+            docker rm resume3 || echo ""
+            docker run -d --name resume -p 8080:5001 ${{secrets.REGISTRY_USERNAME}}/my-image-name:${{github.run_number}}
